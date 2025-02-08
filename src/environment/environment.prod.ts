@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080/api/api',
+  apiUrl: 'https://banking-portal-api-sneeja89-dev.apps.rm3.7wse.p1.openshiftapps.com/api',
   tokenName :  "authToken",
   origin:'http://localhost:4200' 
 };
