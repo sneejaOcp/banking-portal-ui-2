@@ -15,25 +15,25 @@
 1. We have added Dockerfile please take the latest source code.
 
 2. Replace API endpoint with your banking api deployed in OCP
-   filapath : src/environment/environment.ts and src/environment/environment.prod.ts
+   filapath: **src/environment/environment.ts** and **src/environment/environment.prod.ts**
 
 3. Connect to your OCP cluster either via Web OC CLI or local OC CLI using **copy login command** from right top drop down.
 4. Once connected navigate to the project space:
    Run below command :
 
-   oc new-app <YOUR_GIT_URL> --name=ocphackathon-ui
+   ```oc new-app <YOUR_GIT_URL> --name=ocphackathon-ui```
 
    This command will create you buildConfig.yaml, deploymeny.yaml and servive.yaml
 
-   buildconfig.yaml	: Builds an image from the source code (Git, Dockerfile, binary).
+   **buildconfig.yaml:** Builds an image from the source code (Git, Dockerfile, binary).
    
-   deployment.yaml : Deploys the built image as a running container in OpenShift.
+   **deployment.yaml:** Deploys the built image as a running container in OpenShift.
    
-   service.yaml	: Exposes the deployment inside OpenShift as a network service.
+   **service.yaml:** Exposes the deployment inside OpenShift as a network service.
 
-3. Build will get fail due to memory issue.
+5. Build will get fail due to memory issue.
    Add below code in **buildconfig.yaml** under resources tab
-
+```
    limits:
    
       memory: 2Gi
@@ -41,6 +41,6 @@
     requests:
    
       memory: 2Gi
-   
+```
 
-  Start build
+6. Start build
